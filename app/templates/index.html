@@ -1,108 +1,99 @@
-{% extends 'base_with_nav_and_footer.html' %}
-{% block extra_head %}
-<style type="text/css">
-  @media screen and (min-width: 768px) {
-    #main-nav {
-      position: absolute;
-      background-color: transparent;
-      background-image: none;
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <link href="http://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>Graffathon</title>
+  <style>
+    body, html {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
     }
-
-    #main-nav .navbar-brand {
-      color: white;
+    #player {
+        pointer-events: none;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 0;
     }
-
-    #main-nav .nav a {
-      color: white;
+    .player-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 2;
+        /*background-color: rgba(0, 0, 0, 0.5);*/
+        background: linear-gradient(to bottom, rgba(6,45,41,0.76) 0%,rgba(8,34,40,0.5) 100%);
     }
-
-    #main-nav .nav a:hover {
-      border-bottom: 1px dotted white;
+    body {
+          font-family: 'Oswald', sans-serif;
     }
-
-    #main-nav .nav a.active {
-      border-bottom: 1px dotted white;
+    .slide {
+        width: 100%;
+        height: 100%;
     }
-  }
+  </style>
+</head>
 
-  @media screen and (min-width: 768px) {
+<body>
+    <iframe id="player" width="1280" height="720" src="https://www.youtube.com/embed/x4HbtyTlb9A?list=PLmRDkQf8W1WF7SONaMtqW6grVj9N44HkI&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;disablekb=1&amp;modestbranding=1&amp;showinfo=0&amp;enablejsapi=1" frameborder="0" allowfullscreen style="width:100%; height:100%;"></iframe>
+    <script>
+    var url = "https://www.youtube.com/embed/DEMO_ID?autoplay=1&amp;controls=0&amp;loop=1&amp;disablekb=1&amp;modestbranding=1&amp;showinfo=0&amp;enablejsapi=1";
+    var demo_ids = ['xTBQfwVUXvM', 'ZlphVz2Udns', 'PPMPgPMwCEw', 'PzNckOi8m2Y', 'lXtC9_iSKCM'];
+    var player = document.getElementById('player');
+    var random_demo = demo_ids[Math.floor(Math.random() * demo_ids.length)];
+    player.src = url.replace('DEMO_ID', random_demo);
 
-  }
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      tag.src = "http://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-</style>
-{% endblock %}
-{% block nav_type %}fixed{% endblock %}
-{% block short_header %}<!-- main has bigger separate header -->{% endblock %}
-{% block content %}
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player', {
+          playerVars: { 'autoplay': 1, 'controls': 1,'autohide':1,'wmode':'opaque' },
+          videoId: 'JW5meKfy3fY',
+          events: {
+            'onReady': onPlayerReady}
+        });
+      }
 
-<div class="header" id="index-header">
-  <div class="container" id="tuleoppimaan">
-    <div class="row">
-      <div class="col-sm-7">
-        <div class="alert alert-warning">
-          <b>Tapahtuma on päättynyt.</b><br> Siirry <a href="{{ url_for('archive') }}">arkistosivulle</a> ladataksesi julkaistuja tuotoksia ja niin edelleen!
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.mute();
+      }
+    </script>
+    <div class="player-overlay">
+        <div style="margin:0px auto; width: 600px; padding-top: 200px; text-align: left;">
+            <div style="color: #DEEAF4; font-size: 150px;">Graffathon</div>
+            <div style="color: #DEEAF4; font-size: 60px; line-height: 70px; padding-top: 20px;">TULE OPPIMAAN TIETOKONEGRAFIIKKAA!</div>
+            <div style="padding-top: 20px; color: #DEEAF4; font-size: 20px; ">
+                <div style="font-size: 30px; padding-top: 80px;">14. – 15.6.2014, AppSpace, Otaniemi</div>
+                <p style="font-family:Open Sans; padding-top: 10px; margin-top: 0px;">Graffathon on n. 30 tunnin mittainen aloittelijoille suunnattu tietokonegrafiikkahackathon, jonka aikana on tarkoitus tuottaa audiovisuaalinen reaaliaikainen ohjelma eli demo.</p>
+            </div>
         </div>
-        <h1>Tule oppimaan tietokonegrafiikkaa!</h1>
-        <h2>14. – 15.6.2014, AppSpace, Otaniemi</h2>
-        <p style="font-size: 20px">Graffathon on n. 30 tunnin mittainen aloittelijoille suunnattu tietokonegrafiikkahackathon, jonka aikana on tarkoitus tuottaa audiovisuaalinen reaaliaikainen ohjelma eli <a href="http://fi.wikipedia.org/wiki/Demo_(tietokone)" target="_blank" style="color: inherit; text-decoration: underline">demo</a>. <!--<a id="tutustutarkemmin" href="{{ url_for('info') }}">Tutustu tarkemmin!</a>--></p>
-        <p>
-        <a id="info" href="{{ url_for('info') }}" class="btn btn-default btn-lg">Lue lisää</a>
-        </p>
-        </p>
-      </div>
-      <div style="text-align: right" class="col-sm-5 hidden-xs" id="polaroids">
-        <div class="polaroid" id="polaroid-1">
-          <div class="inner">
-
-          </div>
-        </div>
-        <div class="polaroid" id="polaroid-2">
-          <div class="inner">
-
-          </div>
-        </div>
-        <div class="polaroid" id="polaroid-3">
-          <div class="inner">
-
-          </div>
-        </div>
-      </div>
-      <div class="clearfix"></div>
     </div>
-  </div>
-</div> <!--index-header-->
-
-<!-- main content -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h2>Uutiset</h2>
-      <a class="twitter-timeline" href="https://twitter.com/graffathon" data-widget-id="475305399256510464">Twiittejä käyttäjältä @graffathon</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      <h2>Graffathon: jatkoa vuoden 2013 CAG-tapahtumalle</h2>
-      <p>
-      Järjestimme vuoden 2013 kesäkuussa aloittelijoille suunnatun tietokonegrafiikka-aiheisen tapahtuman, joka kantoi nimeä <a href="http://dot.ayy.fi/cag2013.html" target="_blank">Code+Audio+Graphics</a>. Tapahtumaan osallistui n. 60 henkilöä ja siitä todella tykättiin – lue alta osallistujien kommentteja!
-      </p>
-      <p>Edellämainituista syistä halusimme järjestää tapahtuman uudestaan myös vuonna 2014. Tänä vuonna olemme kuitenkin pyrkineet tekemään tapahtumasta vielä aloittelijaystävällisemmän. Lue lisää <a href="{{ url_for('info') }}">infosivulta</a>.</p>
-      <p><b>Edellisvuoden tapahtumaan osallistuneiden kommentteja:</b></p>
-      <blockquote>Heräsin maanantaina ja rupesin koodailemaan lisää..</blockquote>
-      <blockquote>Tapahtumasta jäi hyvä mieli, vaikka en päässytkään paikalle koko ajaksi ja siksi pystynyt osallistumaan kompoihin. Tapahtuma oli oikeasti aloittelijaystävällinen.</blockquote>
-      <blockquote>Huikea tapahtuma, tällaista lisää!</blockquote>
-      <blockquote>Mahtavaa oli, tosi hyvä mieli jälkeenpäin.</blockquote>
-      <h2>Katso viime vuoden kilpailutöitä</h2>
-      <p>Alla Youtube-soittolista, joka sisältää osan viime vuoden kilpailutöistä. Ensimmäisenä voittajademo Fern!, tekijä petrinm.</p>
-      <iframe style="margin-top: 22px; margin-bottom: 22px" width="560" height="315" src="//www.youtube.com/embed/videoseries?list=PLmRDkQf8W1WF7SONaMtqW6grVj9N44HkI" frameborder="0" allowfullscreen></iframe>
+    <div class="slide"></div>
+    <div class="slide" style="background-color: rgb(17, 12, 36); radial-gradient(circle at bottom, rgb(88, 27, 102) 0%, rgb(52, 28, 104) 50%, rgb(17, 12, 36) 100%); background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&amp;noise=626262&amp;density=70&amp;opacity=15);">
+        <div style="margin:0px auto; width: 600px; color: #DEEAF4;">
+            <div style="font-size: 50px; padding-top: 300px;">
+                I'm disappointed in the way we future-proof our minimum viable product. Let's please monetize our efforts.
+            </div>
+        </div>
     </div>
-    <div style="text-align: center" class="col-md-4">
-      <h2>Pikalinkit</h2>
-      <a href="{{ url_for('info_timetable') }}" class="btn btn-sm btn-default">Aikataulu</a>
-      <a href="{{ url_for('info_speakers') }}" class="btn btn-sm btn-default">Ohjelma</a>
-      <a href="{{ url_for('info_location') }}" class="btn btn-sm btn-default">Sijainti</a>
-      <h2>Yhteistyössä</h2>
-      <a href="http://www.futurice.com/"><img src="{{ url_for('static', filename='img/futurice.png') }}" alt="Futurice" class="center-block" style="width: 160px; display: block;"></a>
-      <a href="http://www.futuremark.com/"><img src="{{ url_for('static', filename='img/futuremark.png') }}" alt="Futuremark" class="center-block" style="width: 80%"></a>
-      <p><a href="http://branch.untergrund.net/demokerho_site/" target="_blank">Demokerho</a></p>
-    </div>
-  </div>
-</div>
-{% endblock %}
+</body>
+</html>
