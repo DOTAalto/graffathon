@@ -50,103 +50,12 @@ from emails import send_email, send_all
 def index():
     return render_template('index.html')
 
-
-@app.route('/info')
-def info():
-    return render_template('info/index.html')
-
-
-@app.route('/info/competitions')
-def info_competitions():
-    return render_template('info/competitions.html')
-
-
-@app.route('/info/timetable')
-def info_timetable():
-    return render_template('info/timetable.html')
-
-
-@app.route('/info/speakers')
-def info_speakers():
-    return render_template('info/speakers.html')
-
-
-@app.route('/info/location')
-def info_location():
-    return render_template('info/location.html')
-
-
-@app.route('/info/faq')
-def info_faq():
-    return render_template('info/faq.html')
-
-
-@app.route('/team')
-def team():
-    return render_template('team.html')
-
-
-@app.route('/archive')
-def archive():
-    imgdata = lambda name: {
-        'full_url': "{0}photos/{1}".format(
-            app.config['MEDIA_URL'],
-            name),
-        'media_url': "photos/" + name,
-    }
-
-    photo_path = join(app.config['MEDIA_FOLDER'], 'photos')
-    photos_data = [imgdata(f) for f in sorted(listdir(photo_path))
-                   if isfile(join(photo_path, f))]
-
-    return render_template('archive.html', photos=photos_data)
-
-
 # In development, serve media using flask.
 @app.route('/media/<path:filename>')
 def download_file(filename):
     if app.config['DEBUG']:
         return send_from_directory(app.config['MEDIA_FOLDER'],
                                    filename)
-
-
-@app.route('/in-english')
-def in_english():
-    return render_template('in_english.html')
-
-
-@app.route('/thank-you')
-def signup_thank_you():
-    return render_template('thank_you.html')
-
-
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    form = SignUpForm()
-
-    if request.method == 'POST' and form.validate_on_submit():
-        signup = SignUp("", "", "", "", False, False, True)
-        signup.name = form.name.data
-        signup.email = form.email.data
-        signup.school = form.school.data
-        signup.experience = form.experience.data
-        db.session.add(signup)
-        db.session.commit()
-
-        mail_body = render_template('mails/signup_thankyou.txt')
-        send_email("Graffathon - Ilmoittautuminen rekisteröity", [form.email.data], mail_body, "")
-
-        return redirect(url_for('signup_thank_you'))
-
-    # 66 = maximum visitors we take
-    MAX_VISITORS = 66
-    places = {'min': MAX_VISITORS - SignUp.query.filter_by(visible=True, confirmed=True).count(),
-              'max': MAX_VISITORS - SignUp.query.filter_by(visible=True, paid=True).count()}
-
-    return render_template('signup.html',
-                           form=form,
-                           places=places)
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
