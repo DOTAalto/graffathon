@@ -43,6 +43,20 @@ body {
     padding-top: 200px;
     text-align: left;
 }
+.bottom-arrow {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+.bottom-arrow img {
+    width: 100px;
+    text-align: center;
+}
+.bottom-arrow a {
+    display: inline-block;
+    padding: 30px;
+}
 
 #about-slide {
     background-color: rgb(17, 12, 36);
@@ -70,7 +84,7 @@ body {
 #location-container {
     padding-top: 20px;
     color: #DEEAF4;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 #location-header {
