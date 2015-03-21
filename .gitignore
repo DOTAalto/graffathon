@@ -58,3 +58,4 @@ venv
 
 app/static/bower_components/*
 *.swp
+.env
