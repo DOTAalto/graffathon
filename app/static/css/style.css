@@ -122,7 +122,6 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 #info-slide {
     background-color: rgb(230, 230, 230);
-    margin-top: 20px;
 }
 #get-your-tickets {
     text-align: center;
@@ -170,3 +169,13 @@ h1, h2, h3, h4, h5, #header-main-title {
 #info-slide p {
     font-size: 20px;
 }  
+#insp-pic-slide1 {
+    background-image: url(/static/img/gthong2014_seminar.jpg);
+    background-attachment: fixed;
+    min-height: 600px;
+}
+#insp-pic-slide2 {
+    background-image: url(/static/img/gthong2014_fun1.jpg);
+    background-attachment: fixed;
+    min-height: 600px;
+}
