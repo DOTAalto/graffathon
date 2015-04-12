@@ -213,13 +213,16 @@ h1, h2, h3, h4, h5, #header-main-title {
     text-align: center;
     display: inline-block;
 }
+.black-opacity-bg {
+    margin-top: 100px;
+}
 .black-opacity-bg h1 {
     background: rgba(0, 0, 0, 0.6);
     display: inline-block;
     padding: 20px;
     color: rgb(240, 240, 240);
-    margin-top: 50px;
     margin-bottom: 50px;
+    margin-top: 0px;
 }
 .black-opacity-bg p {
     background: rgba(0, 0, 0, 0.6);
