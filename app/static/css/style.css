@@ -118,6 +118,7 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 #speakers-slide {
     background-color: rgb(230, 230, 230);
+    padding-bottom: 60px;
 }
 #schedule-slide {
     background-color: rgb(230, 230, 230);
@@ -143,6 +144,13 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 .person p {
     font-size: 18px;
+}
+.person h2 strong {
+    font-weight: normal;
+    font-size: 50%;
+    padding-left: 10px;
+    padding-top: -10px;
+    color: rgb(100, 100, 100);
 }
 .schedule {
     font-size: 20px;
