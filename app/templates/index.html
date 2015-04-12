@@ -148,6 +148,27 @@
         </div>
       </div>
     </div>
+    <div class="slide" id="location-slide">
+      <!--<iframe width="600" height="450" frameborder="0" style="border:0; width: 100%; min-height:100%;"
+src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%20Finland&key=AIzaSyBM-nmwhSNGk7gQwWmUw6CWpVOqR3qZ8xY"></iframe>-->
+      <div style="position: absolute; width: 100%; height:100%;">
+        <div id="map-canvas" style="width: 100%; height: 100%;" width="500" height="500"></div>
+        <div style="position: absolute; top: 0px; left:0px; width: 100%; height: 100%;">
+          <div class="container">
+            <div style="row">
+              <div class="col-md-6 black-opacity-bg">
+                <h1>Location</h1>
+                <p>The event is held in <strong>Startup Sauna</strong> in Espoo, near Helsinki. The place can be reached easily with busses such as 102T and 550 or by car.</p>
+                <p>
+                  Betonimiehenkuja 3 D<br>
+                  02150 Espoo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="slide" id="info-slide">
       <div class="container">
         <div class="row">
@@ -187,5 +208,65 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM-nmwhSNGk7gQwWmUw6CWpVOqR3qZ8xY"></script>
+      <script type="text/javascript">
+        function initialize() {
+          console.log("ASD");
+          //60.180593,24.83239,17z
+          var MY_MAPTYPE_ID = 'custom_style';
+          var mapOptions = {
+            center: { lat: 60.180593, lng: 24.82739},
+            zoom: 16,
+            scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            draggable: false,    
+            mapTypeControlOptions: {
+              mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+            },
+            mapTypeId: MY_MAPTYPE_ID,
+            disableDefaultUI: true
+          };
+          var map = new google.maps.Map(
+            document.getElementById('map-canvas'),
+            mapOptions
+          );
+          var marker = new google.maps.Marker({
+            position: { lat: 60.180593, lng: 24.83239},
+            map: map,
+            title: 'Startup Sauna'
+          });
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+          var featureOpts = [
+              {
+                stylers: [
+                  { hue: '#deb510' },
+                  { visibility: 'simplified' },
+                  { gamma: 0.8 },
+                  { weight: 0.5 }
+                ]
+              },
+              {
+                elementType: 'labels',
+                stylers: [
+                  { visibility: 'on' }
+                ]
+              },
+              {
+                featureType: 'water',
+                stylers: [
+                  { color: '#6da1f6' }
+                ]
+              }
+          ];
+          var styledMapOptions = {
+            name: 'Custom Style'
+          };
+          var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+          map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </body>
 </html>
