@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, #header-main-title {
     min-height: 600px;
 }
 .ad-quote {
-    font-size: 100px;
+    font-size: 60px;
     font-family: 'Oswald', sans-serif;
     color: white;
     padding: 10px;
@@ -196,5 +196,12 @@ h1, h2, h3, h4, h5, #header-main-title {
     margin-top: 120px;
 }
 .ad-quote strong {
-    color: red;
+    color: #db07e8;
+}
+.ad-quote-bigger {
+    font-size: 130px;
+    margin: 0px auto;
+    margin-top: 110px;
+    text-align: center;
+    display: inline-block;
 }
