@@ -181,3 +181,18 @@ h1, h2, h3, h4, h5, #header-main-title {
     background-size: cover;
     min-height: 600px;
 }
+.ad-quote {
+    font-size: 100px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 120px;
+}
+.ad-quote strong {
+    color: red;
+}
