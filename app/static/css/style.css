@@ -227,3 +227,6 @@ h1, h2, h3, h4, h5, #header-main-title {
     color: rgb(240, 240, 240);
     font-size: 30px;
 }
+.navbar-brand {
+    font-family: 'Oswald';
+}
