@@ -3,6 +3,7 @@ body, html {
     margin: 0px;
     width: 100%;
     height: 100%;
+    font-family: 'Open Sans';
 }
 
 #player-video {
@@ -128,4 +129,10 @@ body {
     font-family: 'Open Sans';
     background-color: darkred;
     color: white;
+}
+.person {
+    padding-bottom: 20px;
+}
+.person p {
+    font-size: 18px;
 }
