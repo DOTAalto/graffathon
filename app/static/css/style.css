@@ -100,6 +100,9 @@ h1, h2, h3, h4, h5, #header-main-title {
     padding-top: 10px;
 }
 
+#location-slide {
+    background-image: url(/static/img/locationbg.png);
+}
 #location-description {
     font-family: 'Open Sans';
     padding-top: 0px;
@@ -125,6 +128,15 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 #info-slide {
     background-color: rgb(230, 230, 230);
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)), url(/static/img/infobg.jpg) center bottom / cover no-repeat;
+    padding-bottom: 60px;
+    padding-top: 40px;
+}
+#info-slide h2 {
+    margin-top: 50px;
+}
+#info-slide p {
+    padding-bottom: 10px;
 }
 #get-your-tickets {
     text-align: center;
@@ -177,7 +189,7 @@ h1, h2, h3, h4, h5, #header-main-title {
     padding-bottom: 5px;
 }
 #info-slide p {
-    font-size: 20px;
+    font-size: 26px;
 }  
 #insp-pic-slide1 {
     background-image: url(/static/img/gthong2014_seminar.jpg);
