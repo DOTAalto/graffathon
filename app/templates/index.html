@@ -18,7 +18,8 @@
   -->
 </head>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 6;">
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 6;">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
@@ -45,8 +46,7 @@
     </div>
 </nav>
 
-<body>
-    <video autoplay loop poster="polina.jpg" id="player-video">
+   <video autoplay loop poster="polina.jpg" id="player-video">
       <source src="{{ url_for('static', filename='video/test.mp4') }}#t=24" type="video/mp4">
     </video>
     <div class="player-overlay">
