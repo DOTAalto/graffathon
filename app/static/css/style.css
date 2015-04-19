@@ -41,7 +41,13 @@ h1, h2, h3, h4, h5, #header-main-title {
     min-height: 100%;
     z-index: 3;
 }
-.slide h1 {
+.mini-slide {
+    width: 100%;
+    z-index: 3;
+    padding-bottom: 60px;
+}
+.slide h1,
+.mini-slide h1 {
     padding-top: 40px;
     font-size: 70px;
     padding-bottom: 30px;
@@ -126,6 +132,9 @@ h1, h2, h3, h4, h5, #header-main-title {
     padding-bottom: 60px;
 }
 #schedule-slide {
+    background-color: rgb(230, 230, 230);
+}
+#media-slide {
     background-color: rgb(230, 230, 230);
 }
 #info-slide {
@@ -277,4 +286,7 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 .navbar-brand {
     font-family: 'Oswald';
+}
+#media-slide iframe {
+    width:100%!important;
 }
