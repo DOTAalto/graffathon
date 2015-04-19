@@ -18,8 +18,8 @@
   -->
 </head>
 
-<body>
- <nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 6;">
+<body data-spy="scroll" data-target="#navbar">
+ <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top" style="z-index: 6;">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#video">GRAFFATHON</a>
@@ -252,6 +252,7 @@ src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='bower_components/jquery-smooth-scrolling/jquery.smoothscroll.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM-nmwhSNGk7gQwWmUw6CWpVOqR3qZ8xY"></script>
     <script type="text/javascript">
       $('html').smoothScroll();
