@@ -22,7 +22,7 @@
  <nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 6;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">GRAFFATHON</a>
+            <a class="navbar-brand" href="#video">GRAFFATHON</a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -39,7 +39,7 @@
    <video autoplay loop poster="polina.jpg" id="player-video">
       <source src="{{ url_for('static', filename='video/test.mp4') }}#t=24" type="video/mp4">
     </video>
-    <div class="player-overlay">
+    <div id="video" class="player-overlay">
         <div class="header-container">
             <div id="header-main-title">GRAFFATHON</div>
             <div id="location-container">
@@ -250,7 +250,12 @@ src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%
         </div>
 
     </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bower_components/jquery-smooth-scrolling/jquery.smoothscroll.min.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM-nmwhSNGk7gQwWmUw6CWpVOqR3qZ8xY"></script>
+    <script type="text/javascript">
+      $('html').smoothScroll();
+    </script>
       <script type="text/javascript">
         function initialize() {
           console.log("ASD");
