@@ -28,7 +28,9 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#info-slide">Info</a></li>
+                <!--
                 <li><a href="#speakers-slide">Speakers</a></li>
+                -->
                 <li><a href="#schedule-slide">Schedule</a></li>
                 <li><a href="#location-slide">Location</a></li>
                 <li><a href="#media-slide">Twitter</a></li>
@@ -96,26 +98,10 @@
       </div>
     </div>
 
+    <!--
     <div class="slide" id="speakers-slide">
       <div class="container">
         <h1>Speakers</h1>
-        <!--<div class="row">
-          <div class="col-md-4">
-            <img src="http://lorempixel.com/400/400/people/1" style="border-radius: 100%;">
-            <h2>Ryan Bower</h2>
-            <p>Ryan specializes in blablablablaba</p>
-          </div>
-          <div class="col-md-4">
-            <img src="http://lorempixel.com/400/400/people/2" style="border-radius: 100%;">
-            <h2>Ryan Bower</h2>
-            <p>Ryan specializes in blablablablaba</p>
-          </div>
-          <div class="col-md-4">
-            <img src="http://lorempixel.com/400/400/people/3" style="border-radius: 100%;">
-            <h2>Ryan Bower</h2>
-            <p>Ryan specializes in blablablablaba</p>
-          </div>
-        </div>-->
         <div class="row person">
           <div class="col-xs-2">
             <img src="http://holidaypictures.org/wp-content/uploads/2015/01/hug-a-tall-person-day-5.jpg" style="border-radius: 100%; width: 100%; height: 100%;">
@@ -155,6 +141,29 @@
 
       </div>
     </div>
+    -->
+    <div class="slide" id="schedule-slide">
+      <div class="container">
+        <h1>Schedule</h1>
+
+          <h2>Friday 12.6.2015</h2>
+          <div class="schedule">
+            <div class="row">
+              <div class="col-xs-2 time">16.00</div>
+              <div class="col-xs-10 what"><h4>Doors open</h4></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-2 time">17.00</div>
+              <div class="col-xs-10 what">
+                <h4>Blabla</h4>
+              </div>
+            </div>
+          </div>
+
+
+
+      </div>
+    </div>
     <div class="slide" id="insp-pic-slide1">
       <div class="ad-quote">
         <strong>"</strong>
@@ -162,37 +171,6 @@
         ja siksi pystynyt osallistumaan kompoihin.
         Tapahtuma oli oikeasti aloittelijaystävällinen.
         <strong>"</strong>
-      </div>
-    </div>
-    <div class="slide" id="schedule-slide">
-      <div class="container">
-        <h1>Schedule</h1>
-        {% for x in ['Saturday 11.6.2015', 'Sunday 12.6.2015'] %}
-          <h2>{{ x }}</h2>
-          <div class="schedule">
-            <div class="row">
-              <div class="col-xs-2 time">9.45 - 10.00</div>
-              <div class="col-xs-10 what">
-                <h4>Welcome speech</h4>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-2 time">10.00 - 10.55</div>
-              <div class="col-xs-10 what">
-                <h4>Graffathon Coding Basics by <strong>Andy Carlson</strong></h4>
-              </div>
-            </div>
-
-            {% for x in range(6) %}
-              <div class="row">
-                <div class="col-xs-2 time">11.00 - 12.00</div>
-                <div class="col-xs-10 what">
-                  <h4>Some Lorem Lapsum Stuff</h4>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        {% endfor %}
       </div>
     </div>
     <div class="slide" id="location-slide">
@@ -238,6 +216,7 @@ src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%
 
         <h2 style="opacity: 0;">Organized by</h2>
 
+        <!--
         <div class="team-photos clearfix">
           <img src="http://www.graffathon.fi/static/img/team/antti.png">
           <img src="http://www.graffathon.fi/static/img/team/paula.jpg">
@@ -245,6 +224,7 @@ src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%
           <img src="http://www.graffathon.fi/static/img/team/nils.png">
           <img src="http://www.graffathon.fi/static/img/team/sooda.jpg">
         </div>
+        -->
         <div class="row">
           <div class="col-md-6 clearfix">
             <img class="logo" src="/static/img/inverted_dot_logo.svg" style="float:left;">
