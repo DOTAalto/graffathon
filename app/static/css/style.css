@@ -4,6 +4,7 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Open Sans';
+    min-width: 800px;
 }
 body {
     position: relative;
@@ -151,7 +152,7 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 #get-your-tickets {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 #get-your-tickets .btn {
     padding: 10px;
@@ -225,6 +226,7 @@ h1, h2, h3, h4, h5, #header-main-title {
     margin-left: 200px;
     margin-right: 200px;
     margin-top: 120px;
+    margin-bottom: 120px;
 }
 .ad-quote strong {
     color: #db07e8;
@@ -233,6 +235,7 @@ h1, h2, h3, h4, h5, #header-main-title {
     font-size: 130px;
     margin: 0px auto;
     margin-top: 110px;
+    margin-bottom: 110px;
     text-align: center;
     display: inline-block;
 }
