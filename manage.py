@@ -10,5 +10,13 @@ collect.init_app(app)
 collect.init_script(manager)
 
 
+@manager.command
+def freeze():
+    from flask.ext.frozen import Freezer
+    freezer = Freezer(app)
+    freezer.freeze()
+    print "Static page created at app/build/"
+
+
 if __name__ == "__main__":
     manager.run()
