@@ -18,12 +18,5 @@ def freeze():
     print "Static page created at app/build/"
 
 
-@manager.command
-def deploy():
-    print "Freezing page..."
-    freeze()
-    print "Done..."
-
-
 if __name__ == "__main__":
     manager.run()
