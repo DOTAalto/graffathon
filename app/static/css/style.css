@@ -9,9 +9,12 @@ body, html {
 body {
     position: relative;
 }
-#player-video {
+#video-slide {
+    position: relative;
+    background-color: black;
+}
+#video-slide video {
     position: absolute;
-
     right: 0;
     bottom: 0;
     min-width: 100%;
@@ -22,16 +25,14 @@ body {
     background: url(polina.jpg) no-repeat;
     background-size: cover;
 }
-.player-overlay {
+#video-slide .overlay {
     position: absolute;
     width: 100%;
     min-height: 100%;
     top: 0px;
     left: 0px;
     right: 0px;
-    bottom: 0px;
     z-index: 2;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
     background: linear-gradient(to bottom, rgba(6,45,41,0.76) 0%,rgba(8,34,40,0.5) 100%);
 }
 h1, h2, h3, h4, h5, #header-main-title {
@@ -58,13 +59,17 @@ h1, h2, h3, h4, h5, #header-main-title {
     margin:0px auto;
     width: 600px;
     padding-top: 150px;
+    padding-bottom: 50px;
     text-align: left;
+    position: relative;
+    z-index: 2;
 }
 .bottom-arrow {
     position: absolute;
     bottom: 30px;
     width: 100%;
     text-align: center;
+    display: none;
 }
 .bottom-arrow img {
     width: 100px;
@@ -208,12 +213,16 @@ h1, h2, h3, h4, h5, #header-main-title {
     background-attachment: fixed;
     background-size: cover;
     min-height: 600px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 #insp-pic-slide2 {
     background-image: url(/static/img/gthong2014_fun1.jpg);
     background-attachment: fixed;
     background-size: cover;
     min-height: 600px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 .ad-quote {
     font-size: 60px;
@@ -232,7 +241,7 @@ h1, h2, h3, h4, h5, #header-main-title {
     color: #db07e8;
 }
 .ad-quote-bigger {
-    font-size: 130px;
+    font-size: 7vw;
     margin: 0px auto;
     margin-top: 110px;
     margin-bottom: 110px;
@@ -292,4 +301,14 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 #media-slide iframe {
     width:100%!important;
+}
+.sponsors img {
+    width: 100%;
+}
+.sponsors {
+    margin-bottom: 140px;
+}
+.we-are-on-fb {
+    padding-top: 40px;
+    font-size: 20px;
 }

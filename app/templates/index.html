@@ -27,9 +27,9 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#info-slide">Info</a></li>
-                <!--
+                {#
                 <li><a href="#speakers-slide">Speakers</a></li>
-                -->
+                #}
                 <li><a href="#schedule-slide">Schedule</a></li>
                 <li><a href="#location-slide">Location</a></li>
                 <li><a href="#media-slide">Twitter</a></li>
@@ -39,26 +39,22 @@
     </div>
 </nav>
 
-   <video autoplay loop poster="polina.jpg" id="player-video">
-      <source src="{{ url_for('static', filename='video/test.mp4') }}#t=24" type="video/mp4">
-    </video>
-    <div id="video" class="player-overlay">
+    <div class="slide" id="video-slide"> 
+       <video autoplay loop poster="polina.jpg" id="player-video">
+          <source src="{{ url_for('static', filename='video/test.mp4') }}#t=24" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
         <div class="header-container">
             <div id="header-main-title">GRAFFATHON</div>
             <div id="location-container">
-                <!--<div id="location-header">14. – 15.6.2014 at Espoo, Finland</div> -->
-                <p id="location-description">Graffathon is a two-day computer graphics hackathon aimed for novices. Every participant will create a non-interactive multimedia presentation (also known as <em>demo</em>).</p>
+                <p id="location-description">Graffathon is a three-day computer graphics hackathon aimed for novices. Every participant will create a non-interactive multimedia presentation (also known as <em>demo</em>).</p>
                 <div id="location"><span>12.6.2015—14.6.2015</span> <span class="at">at</span> <span title="Otaniemi, Espoo, Finland">Otaniemi</span></div>
                 <div id="get-your-tickets">
                   <a href="https://www.eventbrite.com/e/graffathon-tickets-16843093145" class="btn btn-large">Get your ticket</a>
                 </div>
             </div>
         </div>
-        <div class="bottom-arrow">
-          <a href="#info-slide"><img src="{{ url_for('static', filename='img/bottom_arrow.svg') }}" alt="Read more" /></a>
-        </div>
     </div>
-    <div class="slide"></div>
 
     <div class="slide" id="info-slide">
       <div class="container">
@@ -244,21 +240,21 @@ src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%
         <h1>@Graffathon <small>on Twitter</small></h1>
         <a class="twitter-timeline" href="https://twitter.com/graffathon" data-widget-id="475305399256510464" data-chrome="nofooter transparent noheader" height="500">Twiittejä käyttäjältä @graffathon</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <p class="we-are-on-fb">We are also on <a href="https://www.facebook.com/events/654729334655361/">Facebook!</a></p>
       </div>
     </div>
     <div class="slide" id="footer-slide">
       <div class="container">
-        {#
         <h2>Sponsored by</h2>
-        <div class="row">
+        <div class="row sponsors">
           <div class="col-md-4">
-            <div style="font-family:Oswald; color:rgb(230, 230, 230); background-color:rgb(40, 80, 120); padding: 30px; font-size: 70px; text-align: center; height: 1250x; line-height: 250px; text-shadow: rgba(23, 23, 23, 0.5) 2px 2px 8px;">
-              YOU
-            </div>
+            <a href="http://futurice.com/">
+              <img src="/static/img/futurice-logo.jpg" alt="" />
+            </a>
           </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
         </div>
-        #}
-        <h2 style="opacity: 0;">Organized by</h2>
 
         <!--
         <div class="team-photos clearfix">
