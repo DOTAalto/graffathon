@@ -302,11 +302,14 @@ h1, h2, h3, h4, h5, #header-main-title {
 #media-slide iframe {
     width:100%!important;
 }
+#footer-slide h2 {
+    margin-bottom: 15px;
+}
 .sponsors img {
     width: 100%;
 }
 .sponsors {
-    margin-bottom: 140px;
+    margin-bottom: 15px;
 }
 .we-are-on-fb {
     padding-top: 40px;
