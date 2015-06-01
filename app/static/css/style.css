@@ -266,7 +266,9 @@ h1, h2, h3, h4, h5, #header-main-title {
     font-size: 30px;
 }
 #footer-slide {
-    background: linear-gradient(rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.2)), url(http://www.graffathon.fi/media/photos/20140614_092501.jpg) center bottom / cover no-repeat;
+    /*background: linear-gradient(rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.2)), url(http://www.graffathon.fi/media/photos/20140614_092501.jpg) center bottom / cover no-repeat;
+    */
+    background-color: rgb(30, 30, 30);
     color: rgb(230, 230, 230);
     padding-bottom: 80px;
 }
@@ -303,7 +305,7 @@ h1, h2, h3, h4, h5, #header-main-title {
     width:100%!important;
 }
 #footer-slide h2 {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 .sponsors .futurice {
     padding-top: 90px;
@@ -314,9 +316,18 @@ h1, h2, h3, h4, h5, #header-main-title {
 }
 .sponsors img {
     width: 100%;
+    margin: 0px auto;
+    display: block;
+    max-width: 300px;
+}
+.sponsors .futurice img {
+    width: 90%;
 }
 .sponsors .nvidia img {
     width: 80%;
+}
+.sponsors .nvidia img {
+    padding-top: 30px;
 }
 .sponsors {
     margin-bottom: 15px;
