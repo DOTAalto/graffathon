@@ -305,8 +305,18 @@ h1, h2, h3, h4, h5, #header-main-title {
 #footer-slide h2 {
     margin-bottom: 15px;
 }
+.sponsors .futurice {
+    padding-top: 90px;
+}
+.sponsors a {
+    padding: 30px;
+    display: block;
+}
 .sponsors img {
     width: 100%;
+}
+.sponsors .nvidia img {
+    width: 80%;
 }
 .sponsors {
     margin-bottom: 15px;
