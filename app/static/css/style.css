@@ -9,12 +9,20 @@ body, html {
 body {
     position: relative;
 }
-#player {
+.player-container {
   margin-bottom: 20px;
+}
+.player-container .thanks {
+  padding-top: 5px;
+  color: white;
+  text-align: right;
 }
 #video-slide {
     position: relative;
     background-color: black;
+    padding-top: 60px;
+    background-image: url(/static/video/thumbnail.jpg);
+    background-size: cover;
 }
 #video-slide video {
     position: absolute;
@@ -28,6 +36,11 @@ body {
     background: url(polina.jpg) no-repeat;
     background-size: cover;
 }
+#video-slide .container {
+
+  position: relative;
+  z-index: 2;
+}
 #video-slide .overlay {
     position: absolute;
     width: 100%;
@@ -36,7 +49,7 @@ body {
     left: 0px;
     right: 0px;
     z-index: 2;
-    background: linear-gradient(to bottom, rgba(6,45,41,0.76) 0%,rgba(8,34,40,0.5) 100%);
+    background: linear-gradient(to bottom, rgba(6,45,41,0.96) 0%,rgba(8,34,40,0.8) 100%);
 }
 h1, h2, h3, h4, h5, #header-main-title {
       font-family: 'Oswald', sans-serif;
@@ -60,7 +73,7 @@ h1, h2, h3, h4, h5, #header-main-title {
 
 .header-container {
     margin:0px auto;
-    width: 600px;
+    width: 900px;
     padding-top: 150px;
     padding-bottom: 50px;
     text-align: left;
@@ -104,7 +117,10 @@ h1, h2, h3, h4, h5, #header-main-title {
 
 #header-main-title {
     color: #DEEAF4;
-    font-size: 130px;
+    font-size: 90px;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
 }
 
 #header-second-title {
@@ -138,11 +154,12 @@ h1, h2, h3, h4, h5, #header-main-title {
 #location {
     font-family: 'Oswald', sans-serif;
     text-align: center;
-    font-size: 40px;
-    padding-top: 90px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 40px;
 }
 #location .at {
-    font-size: 30px;
+    font-size: 20px;
 }
 #speakers-slide {
     background-color: rgb(230, 230, 230);
