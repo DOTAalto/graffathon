@@ -17,6 +17,11 @@ body {
   color: white;
   text-align: right;
 }
+#irc-slide {
+  background-color: #c0392b;
+  color: white;
+  font-size: 20px;
+}
 #video-slide {
     position: relative;
     background-color: black;
