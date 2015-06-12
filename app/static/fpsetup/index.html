@@ -1,0 +1,57 @@
+<!doctype html>
+
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
+   <!-- player skin -->
+   <link rel="stylesheet" href="skin/minimalist.css">
+
+   <!-- site specific styling -->
+   <style>
+   body { font: 12px "Myriad Pro", "Lucida Grande", sans-serif; text-align: center; padding-top: 5%; }
+   .flowplayer { width: 80%; }
+   </style>
+
+   <!-- for video tag based installs flowplayer depends on jQuery 1.7.2+ -->
+   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+   <!-- include flowplayer -->
+   <script src="./flowplayer.min.js"></script>
+
+   <!-- <link rel="stylesheet" href="//329w.flowplayer.me/drive/quality-selector.css"> -->
+<!-- <script src="./quality-selector-v6.js"></script> -->
+<link rel="stylesheet" href="//flowplayer.org/drive/quality-selector.css">
+<script src="//flowplayer.org/drive/quality-selector-v6.js"></script>
+
+</head>
+
+<body>
+<div id="player"></div>
+
+<script>
+// select the above element as player container
+var container = document.getElementById("player");
+
+// install flowplayer into selected container
+flowplayer(container, {
+
+    clip: {
+       sources: [
+                 { type: "application/x-mpegurl",
+                 	src:  "http://wowza.aatemedia.fi:1935/live/aate_720p/playlist.m3u8"}
+        ]
+    },
+    embed: false,
+    ratio: 9/16,
+    wmode: "opaque",
+    live: true,
+    autoplay: true,
+	fullscreen: true, // required to allow iframe go fullscreen
+    swf: "flowplayer.swf",
+    swfHls: "flowplayerhls.swf"
+});
+
+</script>
+
+
+</body>

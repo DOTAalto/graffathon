@@ -60,6 +60,8 @@
       <div class="container">
         <div class="row">
             <h1>Graffathon 2015</h1>
+            <div id="player"></div>
+
             <p>Graffathon is a three-day computer graphics hackathon aimed for novices. Every participant will create a computer program that produces a non-interactive multimedia presentation also known as demo. The event is targeted at real beginners who have no previous graphics coding and/or demoscene experience. The demos can be done in small groups of two or three people. One can also make the demo by themselves or find a group at the event. </p>
             <p>
             The program consists of helpful presentations and workshops which guide you on how to create your first demo. In addition, we teach you the basics of demoscene and democulture.</p>
@@ -314,6 +316,12 @@ src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%
     <script type="text/javascript">
       $('html').smoothScroll();
     </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='fpsetup/skin/minimalist.css') }}">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="{{ url_for('static', filename='fpsetup/flowplayer.min.js') }}"></script>
+    <link rel="stylesheet" href="//flowplayer.org/drive/quality-selector.css">
+    <script src="//flowplayer.org/drive/quality-selector-v6.js"></script>
       <script type="text/javascript">
         function initialize() {
           console.log("ASD");
@@ -372,6 +380,29 @@ src="https://www.google.com/maps/embed/v1/place?q=Startup%20Sauna%2C%20Espoo%2C%
           map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
         }
         google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script>
+      // select the above element as player container
+      var container = document.getElementById("player");
+
+      // install flowplayer into selected container
+      flowplayer(container, {
+
+          clip: {
+             sources: [
+                       { type: "application/x-mpegurl",
+                         src:  "http://wowza.aatemedia.fi:1935/live/aate_720p/playlist.m3u8"}
+              ]
+          },
+          embed: false,
+          ratio: 9/16,
+          wmode: "opaque",
+          live: true,
+          autoplay: true,
+        fullscreen: true, // required to allow iframe go fullscreen
+          swf: "{{ url_for('static', filename='fpsetup/flowplayer.swf') }}",
+          swfHls: "{{ url_for('static', filename='fpsetup/flowplayerhls.swf') }}"
+      });
     </script>
 </body>
 </html>

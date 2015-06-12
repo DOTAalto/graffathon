@@ -9,6 +9,9 @@ body, html {
 body {
     position: relative;
 }
+#player {
+  margin-bottom: 20px;
+}
 #video-slide {
     position: relative;
     background-color: black;
