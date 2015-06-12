@@ -310,6 +310,9 @@ h1, h2, h3, h4, h5, #header-main-title {
 .sponsors .futurice {
     padding-top: 90px;
 }
+.sponsors .futuremark {
+    padding-top: 40px;
+}
 .sponsors a {
     padding: 30px;
     display: block;
