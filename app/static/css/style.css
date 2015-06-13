@@ -17,6 +17,17 @@ body {
   color: white;
   text-align: right;
 }
+.countdown {
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  padding-bottom: 20px;
+  color: gray;
+}
+.countdown > span {
+  font-size: 80px;
+  color: white;
+}
 #irc-slide {
   background-color: #c0392b;
   color: white;
