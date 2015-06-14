@@ -14,3 +14,7 @@ app.config.from_envvar('GRAFFATHON_SETTINGS')
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/archive')
+def archive():
+    return redirect('/2014/archive.html')
