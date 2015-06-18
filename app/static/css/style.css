@@ -383,3 +383,37 @@ h1, h2, h3, h4, h5, #header-main-title {
     padding-top: 40px;
     font-size: 20px;
 }
+#results-slide {
+  background-color: #1abc9c;
+  color: white;
+}
+.description-container {
+  background-color: #34495e;
+  color: white;
+  padding: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+.result .position {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+.result .description {
+  padding-top: 3px;
+}
+.preview-image-animated {
+  display: none;
+}
+.preview-image-link {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.preview-image-link:hover .preview-image-animated {
+  display: block;
+}
+.preview-image-link:hover .preview-image {
+  display: none;
+}1

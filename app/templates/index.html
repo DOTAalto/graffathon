@@ -52,7 +52,7 @@
         <div class="container">
             <div id="header-main-title">GRAFFATHON</div>
             <div id="location-container">
-                
+
                 <p id="location-description">Graffathon is a three-day computer graphics hackathon aimed for novices. Every participant will create a non-interactive multimedia presentation (also known as <em>demo</em>).</p>
                 <div id="location"><span>12.6.2015—14.6.2015</span> <span class="at">at</span> <span title="Otaniemi, Espoo, Finland">Otaniemi</span></div>
                 <!--<div id="get-your-tickets">
@@ -62,6 +62,41 @@
         </div>
     </div>
 
+    <div class="slide" id="results-slide">
+      <div class="container">
+        <h1>Results</h1>
+        <div class="row">
+          {% set DOMINANT_COLORS = {1: (21, 12, 14), 2: (5, 20, 11), 3: (214, 212, 215), 4: (12, 149, 5), 5: (36, 34, 37), 6: (235, 243, 20), 7: (251, 251, 12), 8: (53, 49, 49), 9: (149, 46, 29), 10: (4, 4, 4), 11: (105, 74, 117), 12: (4, 4, 5), 13: (20, 19, 27), 14: (41, 41, 41), 15: (6, 4, 6), 16: (140, 211, 243), 17: (16, 35, 40), 18: (215, 144, 145), 19: (4, 4, 4), 20: (100, 7, 76), 21: (207, 109, 71), 22: (102, 156, 170), 23: (4, 4, 4), 24: (4, 4, 4), 25: (16, 4, 4), 26: (39, 35, 36), 27: (4, 4, 4), 28: (113, 199, 166), 29: (4, 4, 5), 30: (5, 4, 4), 31: (4, 4, 4), 32: (100, 7, 76)} %}
+          {% macro render_result(x) %}
+            {% set bgColor = DOMINANT_COLORS[x[0]] %}
+            <div class="embed-responsive embed-responsive-16by9">
+              <a class="preview-image-link embed-responsive-item" href="{{ links[x[0]-1] }}" style="background-color: rgb({{ bgColor[0] }}, {{ bgColor[1] }}, {{ bgColor[2] }});">
+                <img class="preview-image" src="/static/results/thumbnails/{{ x[0] }}.jpg" style="width: 100%;">
+                <img class="preview-image-animated" src="/static/results/gifs/{{ x[0] }}.gif" style="width: 100%;">
+              </a>
+            </div>
+            <div class="description-container row">
+              <div class="col-xs-2 position">{{ x[0] }}.</div>
+              <div class="col-xs-10 description">{{ x[2] }}</div>
+            </div>
+          {% endmacro %}
+          {% for x in results[0:4] %}
+            <div class="col-sm-6 result">
+              {{ render_result(x) }}
+            </div>
+          {% endfor %}
+        </div>
+        {% for row in results[4:]|batch(4) %}
+        <div class="row">
+          {% for x in row %}
+            <div class="col-sm-3 result">
+              {{ render_result(x) }}
+            </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
     <div class="slide" id="info-slide">
       <div class="container">
         <div class="row">
