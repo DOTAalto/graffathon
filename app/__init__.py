@@ -80,10 +80,14 @@ LINKS = [
     "https://www.youtube.com/watch?v=Or-fInNS4XE&list=PLmRDkQf8W1WFboD7M9xoLUf_pRwz6kL9c&index=32"
 ]
 
-@app.route('/')
+@app.route('/2015/')
 def index():
     return render_template('index.html', results=RESULTS, links=LINKS)
 
+@app.route('/')
+def redirect_to_2015():
+    return redirect('/2015/', 301)
+
 @app.route('/archive')
-def archive():
-    return redirect('/2014/archive.html')
+def redirect_to_2014_archive():
+    return redirect('/2014/archive.html', 301)
