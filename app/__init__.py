@@ -86,7 +86,7 @@ def index():
 
 @app.route('/')
 def redirect_to_2015():
-    return redirect('/2015/', 301)
+    return redirect('/2015/')
 
 @app.route('/archive')
 def redirect_to_2014_archive():
