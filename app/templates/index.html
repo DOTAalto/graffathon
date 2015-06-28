@@ -21,11 +21,12 @@
  <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top" style="z-index: 6;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#video">GRAFFATHON</a>
+            <a class="navbar-brand" href="#video-slide">GRAFFATHON</a>
         </div>
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+              <li><a href="#results-slide">Results</a></li>
                 <li><a href="#info-slide">Info</a></li>
                 {#
                 <li><a href="#speakers-slide">Speakers</a></li>
@@ -69,6 +70,7 @@
           {% set DOMINANT_COLORS = {1: (21, 12, 14), 2: (5, 20, 11), 3: (214, 212, 215), 4: (12, 149, 5), 5: (36, 34, 37), 6: (235, 243, 20), 7: (251, 251, 12), 8: (53, 49, 49), 9: (149, 46, 29), 10: (4, 4, 4), 11: (105, 74, 117), 12: (4, 4, 5), 13: (20, 19, 27), 14: (41, 41, 41), 15: (6, 4, 6), 16: (140, 211, 243), 17: (16, 35, 40), 18: (215, 144, 145), 19: (4, 4, 4), 20: (100, 7, 76), 21: (207, 109, 71), 22: (102, 156, 170), 23: (4, 4, 4), 24: (4, 4, 4), 25: (16, 4, 4), 26: (39, 35, 36), 27: (4, 4, 4), 28: (113, 199, 166), 29: (4, 4, 5), 30: (5, 4, 4), 31: (4, 4, 4), 32: (100, 7, 76)} %}
           {% macro render_result(x) %}
             {% set bgColor = DOMINANT_COLORS[x[0]] %}
+            {# This is a horrible hack! :-( :-| :-) #}
             {% if x[0] > 1 and results[x[0]-2][1] == x[1] %}
               {% set position = x[0]-1 %}
             {% else %}
