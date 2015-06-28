@@ -69,6 +69,11 @@
           {% set DOMINANT_COLORS = {1: (21, 12, 14), 2: (5, 20, 11), 3: (214, 212, 215), 4: (12, 149, 5), 5: (36, 34, 37), 6: (235, 243, 20), 7: (251, 251, 12), 8: (53, 49, 49), 9: (149, 46, 29), 10: (4, 4, 4), 11: (105, 74, 117), 12: (4, 4, 5), 13: (20, 19, 27), 14: (41, 41, 41), 15: (6, 4, 6), 16: (140, 211, 243), 17: (16, 35, 40), 18: (215, 144, 145), 19: (4, 4, 4), 20: (100, 7, 76), 21: (207, 109, 71), 22: (102, 156, 170), 23: (4, 4, 4), 24: (4, 4, 4), 25: (16, 4, 4), 26: (39, 35, 36), 27: (4, 4, 4), 28: (113, 199, 166), 29: (4, 4, 5), 30: (5, 4, 4), 31: (4, 4, 4), 32: (100, 7, 76)} %}
           {% macro render_result(x) %}
             {% set bgColor = DOMINANT_COLORS[x[0]] %}
+            {% if x[0] > 1 and results[x[0]-2][1] == x[1] %}
+              {% set position = x[0]-1 %}
+            {% else %}
+              {% set position = x[0] %}
+            {% endif %}
             <div class="embed-responsive embed-responsive-16by9">
               <a class="preview-image-link embed-responsive-item" href="{{ links[x[0]-1] }}" style="background-color: rgb({{ bgColor[0] }}, {{ bgColor[1] }}, {{ bgColor[2] }});">
                 <img class="preview-image" src="/static/results/thumbnails/{{ x[0] }}.jpg" style="width: 100%;">
@@ -76,8 +81,9 @@
               </a>
             </div>
             <div class="description-container row">
-              <div class="col-xs-2 position">{{ x[0] }}.</div>
-              <div class="col-xs-10 description">{{ x[2] }}</div>
+              <div class="col-xs-2 position">{{ position }}.</div>
+              <div class="col-xs-8 description">{{ x[2] }}</div>
+              <div class="col-xs 2 points">{{ x[1] }}p</div>
             </div>
           {% endmacro %}
           {% for x in results[0:4] %}
